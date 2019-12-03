@@ -15,5 +15,7 @@
   "bugs": {
     "url": "https://github.com/lilindog/lilin-session-redis/issues"
   },
-  "homepage": "https://github.com/lilindog/lilin-session-redis#readme"
+  "homepage": "https://github.com/lilindog/lilin-session-redis#readme",
+  "dependencies": {
+  }
 }
