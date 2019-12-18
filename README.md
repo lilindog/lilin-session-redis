@@ -55,5 +55,7 @@ app.listen(80);
 
 #### 待实现
 
-为session.set()方法提供生存时间参数，让设置的session字段有过期功能
+~~为session.set()方法提供生存时间参数，让设置的session字段有过期功能~~  <b>已实现</b>
+
+以一定的周期（通常较短，根据配置来定）动态更换sessionid
 
