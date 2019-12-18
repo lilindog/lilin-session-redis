@@ -17,8 +17,7 @@ const express = require("express");
 let app = express();
 
 //使用session
-app.use(async (req, res, next)=>
-{   
+app.use(async (req, res, next) => {   
     //这里必须使用await异步写法
 	await session({
         
@@ -42,8 +41,11 @@ app.use(async (req, res, next)=>
 
 //测试写入、读取session
 app.get("/test", async (req, res)=>{
-    await req.session.set("isLogin", true);
-    res.send(await req.session.get("isLogin"));
+
+    await req.session.set("test", "yes"); //设置session
+    await req.session.set("test1", "hello", 10); //设置session，10秒后自动失效
+    await req.session.setOnce("test2", "fuck"); //设置session，初次读取后自动失效，也就是说只能被读取1次
+    res.send(await req.session.get("test")); //获取session
 });
 
 app.listen(80);
